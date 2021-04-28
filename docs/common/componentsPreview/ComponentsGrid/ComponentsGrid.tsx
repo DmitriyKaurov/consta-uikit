@@ -2,11 +2,14 @@ import './ComponentsGrid.css';
 
 import React from 'react';
 
-// import { Text } from '../../../../src/components/Text/Text';
-import { cn } from '../../../../src/utils/bem';
+import { Text } from '../../../../src/components/Text/Text';
 
-const cnComponentsGrid = cn('ComponentsGrid');
+// import { cn } from '../../../../src/utils/bem';
 
-export const ComponentsGrid = () => {
-  return <div className={cnComponentsGrid()}>{/* <Text>Это заводится</Text> */}</div>;
-};
+export function ComponentsGrid() {
+  return (
+    <div className="test">
+      <Text>Это не заводится</Text>
+    </div>
+  );
+}
