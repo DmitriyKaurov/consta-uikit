@@ -1,0 +1,41 @@
+import { UseComponentSizeExample } from './examples/UseComponentSizeExample/UseComponentSizeExample';
+
+<Meta title="Hooks|useComponentSize" id="useComponentSize" />
+
+# useComponentSize
+
+Хук исплользуется для получение размеров элемента
+
+```tsx
+type ComponentSize = {
+  width: number;
+  height: number;
+};
+
+type UseComponentSize = <T extends HTMLElement | SVGGraphicsElement>(
+  ref: React.RefObject<T>,
+) => ComponentSize;
+```
+
+| Параметры | Тип                  | По умолчанию | Описание          |
+| --------- | -------------------- | ------------ | ----------------- |
+| `ref`     | `React.RefObject<T>` | -            | ссылка на элемент |
+
+## Примеры
+
+```tsx
+export const UseComponentSizeExample = () => {
+  const ref = useRef(null);
+  const { width, height } = useComponentSize(ref);
+
+  return (
+    <Text ref={ref}>
+      width: {width}
+      <br />
+      height: {height}
+    </Text>
+  );
+};
+```
+
+<UseComponentSizeExample />

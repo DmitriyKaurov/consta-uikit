@@ -1,0 +1,6 @@
+.UseComponentSizeExample {
+  &-Block {
+    padding: var(--space-m);
+    background: var(--color-bg-secondary);
+  }
+}

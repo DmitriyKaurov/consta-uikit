@@ -18,9 +18,11 @@ const getElementSize = (el: HTMLElement | SVGGraphicsElement | null): ComponentS
   };
 };
 
-export function useComponentSize<T extends HTMLElement | SVGGraphicsElement>(
+type UseComponentSize = <T extends HTMLElement | SVGGraphicsElement>(
   ref: React.RefObject<T>,
-): ComponentSize {
+) => ComponentSize;
+
+export const useComponentSize: UseComponentSize = (ref) => {
   const [componentSize, setComponentSize] = useState<ComponentSize>(
     getElementSize(ref && ref.current),
   );
@@ -48,4 +50,4 @@ export function useComponentSize<T extends HTMLElement | SVGGraphicsElement>(
   }, [ref, handleResize]);
 
   return componentSize;
-}
+};
